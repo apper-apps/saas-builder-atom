@@ -10,6 +10,7 @@ import Empty from '@/components/ui/Empty';
 import PrioritySelector from '@/components/molecules/PrioritySelector';
 import ComparisonTable from '@/components/molecules/ComparisonTable';
 import RecommendationCard from '@/components/molecules/RecommendationCard';
+import QuestionnaireCard from '@/components/molecules/QuestionnaireCard';
 
 const ComparisonWizard = () => {
   const {
@@ -107,24 +108,55 @@ const ComparisonWizard = () => {
         </Card>
       </motion.section>
 
-      {/* Step 2: Comparisons */}
+{/* Step 2: Questionnaire */}
       {currentStep >= 2 && (
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Card className="bg-gradient-to-br from-white to-secondary-50">
+          <Card className="questionnaire-wrapper">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-8 h-8 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">2</span>
               </div>
               <h2 className="text-xl font-bold text-gray-900">
-                🔽 Step 2: Based on your needs, here's how they compare
+                💭 Step 2: Quick Assessment
+              </h2>
+            </div>
+            
+            <p className="text-gray-600 mb-8">
+              Help us understand your specific needs better with these quick questions:
+            </p>
+
+            <QuestionnaireCard 
+              onComplete={(answers) => {
+                console.log('Questionnaire answers:', answers);
+                continueToStep(3);
+              }}
+            />
+          </Card>
+        </motion.section>
+      )}
+
+      {/* Step 3: Comparisons */}
+      {currentStep >= 3 && (
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <Card className="bg-gradient-to-br from-white to-secondary-50">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">3</span>
+              </div>
+              <h2 className="text-xl font-bold text-gray-900">
+                📊 Step 3: Based on your needs, here's how they compare
               </h2>
             </div>
 
-            {loading && currentStep === 2 ? (
+            {loading && currentStep === 3 ? (
               <Loading variant="comparisons" message="Analyzing your priorities..." />
             ) : comparisons.length === 0 ? (
               <Empty 
@@ -149,7 +181,7 @@ const ComparisonWizard = () => {
                 
                 <div className="text-center mt-8">
                   <Button
-                    onClick={() => continueToStep(3)}
+                    onClick={() => continueToStep(4)}
                     variant="primary"
                     size="lg"
                     className="flex items-center space-x-2"
@@ -164,14 +196,14 @@ const ComparisonWizard = () => {
         </motion.section>
       )}
 
-      {/* Step 3: Recommendation */}
-      {currentStep >= 3 && (
+{/* Step 4: Recommendation */}
+      {currentStep >= 4 && (
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          {loading && currentStep === 3 ? (
+          {loading && currentStep === 4 ? (
             <Loading message="Generating your personalized recommendation..." />
           ) : recommendation ? (
             <RecommendationCard 
@@ -190,8 +222,8 @@ const ComparisonWizard = () => {
         </motion.section>
       )}
 
-      {/* Section Dividers */}
-      {currentStep >= 2 && <div className="section-divider"></div>}
+{/* Section Dividers */}
+      {currentStep >= 3 && <div className="section-divider"></div>}
     </div>
   );
 };

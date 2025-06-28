@@ -27,10 +27,11 @@ const Card = forwardRef(({
     hover: hover ? 'hover:shadow-elevated' : ''
   };
   
-  const backgroundClasses = {
+const backgroundClasses = {
     white: 'bg-white',
     gray: 'bg-surface-50',
-    gradient: 'bg-gradient-to-br from-white to-surface-50'
+    gradient: 'bg-gradient-to-br from-white to-surface-50',
+    questionnaire: 'bg-gradient-to-br from-purple-50 to-indigo-50'
   };
   
   const classes = `${baseClasses} ${paddingClasses[padding]} ${shadowClasses[shadow]} ${shadowClasses.hover} ${backgroundClasses[background]} ${className}`;
