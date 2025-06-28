@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import ApperIcon from '@/components/ApperIcon';
 import Button from '@/components/atoms/Button';
 import Card from '@/components/atoms/Card';
+import ProgressBar from '@/components/atoms/ProgressBar';
 import Loading from '@/components/ui/Loading';
 import Error from '@/components/ui/Error';
 import Empty from '@/components/ui/Empty';
@@ -11,7 +12,6 @@ import PrioritySelector from '@/components/molecules/PrioritySelector';
 import ComparisonTable from '@/components/molecules/ComparisonTable';
 import RecommendationCard from '@/components/molecules/RecommendationCard';
 import QuestionnaireCard from '@/components/molecules/QuestionnaireCard';
-
 const ComparisonWizard = () => {
   const {
     priorities,
@@ -51,8 +51,22 @@ const ComparisonWizard = () => {
     return <Error message={error} onRetry={retry} />;
   }
 
-  return (
+return (
     <div className="max-w-4xl mx-auto space-y-8">
+      {/* Progress Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="sticky top-4 z-10 bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg border border-gray-100"
+      >
+        <ProgressBar 
+          currentStep={currentStep}
+          totalSteps={4}
+          stepLabels={['Priorities', 'Assessment', 'Comparison', 'Recommendation']}
+        />
+      </motion.div>
+
       {/* Step 1: Priority Selection */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}

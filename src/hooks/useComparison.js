@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
-import comparisonService from '@/services/api/comparisonService';
+import { useCallback, useEffect, useState } from "react";
+import comparisonService from "@/services/api/comparisonService";
 
 export const useComparison = () => {
   const [priorities, setPriorities] = useState([]);
@@ -94,7 +94,7 @@ export const useComparison = () => {
     setError(null);
   }, []);
 
-  // Retry on error
+// Retry on error
   const retry = useCallback(async () => {
     setError(null);
     
@@ -108,6 +108,30 @@ export const useComparison = () => {
     }
   }, [currentStep, loadComparisons, generateRecommendation]);
 
+  // Progress tracking utilities
+  const getStepInfo = useCallback(() => {
+    const stepLabels = ['Priorities', 'Assessment', 'Comparison', 'Recommendation'];
+    const totalSteps = 4;
+    const progressPercentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
+    
+    return {
+      currentStep,
+      totalSteps,
+      stepLabels,
+      progressPercentage,
+      currentStepLabel: stepLabels[currentStep - 1]
+    };
+  }, [currentStep]);
+
+  const getProgressPercentage = useCallback(() => {
+    return ((currentStep - 1) / 3) * 100;
+  }, [currentStep]);
+
+  const getStepLabel = useCallback((step = currentStep) => {
+    const labels = ['Priorities', 'Assessment', 'Comparison', 'Recommendation'];
+    return labels[step - 1] || 'Unknown';
+  }, [currentStep]);
+
   return {
     priorities,
     selectedPriorities,
@@ -120,6 +144,10 @@ export const useComparison = () => {
     continueToStep,
     resetComparison,
     retry,
-    canContinue: selectedPriorities.length > 0
+    canContinue: selectedPriorities.length > 0,
+    // Progress tracking
+    getStepInfo,
+    getProgressPercentage,
+    getStepLabel
   };
 };
