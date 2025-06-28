@@ -1,0 +1,79 @@
+[
+  {
+    "Id": 1,
+    "priorityKey": "ai-ui",
+    "feature": "AI UI Generation",
+    "apperSupport": "✅ Yes",
+    "lovableSupport": "✅ Yes",
+    "apperDetails": "AI UI Builder",
+    "lovableDetails": "AI UI Builder",
+    "winner": "tie",
+    "resultText": "Both tools provide this equally well."
+  },
+  {
+    "Id": 2,
+    "priorityKey": "backend-auth",
+    "feature": "Backend & Auth Setup",
+    "apperSupport": "✅ Built-in",
+    "lovableSupport": "⚠️ Requires Supabase",
+    "apperDetails": "Backend/Database: ✅ Built-in, User Authentication: ✅ One-click",
+    "lovableDetails": "Backend/Database: ⚠️ Requires Supabase, User Authentication: ⚠️ 30+ manual steps",
+    "winner": "apper",
+    "resultText": "Apper wins for simplicity and speed."
+  },
+  {
+    "Id": 3,
+    "priorityKey": "multi-tenant",
+    "feature": "Multi-Tenant Security",
+    "apperSupport": "✅ Automatic",
+    "lovableSupport": "❌ Manual setup",
+    "apperDetails": "Data Isolation: ✅ Automatic, Connection Pooling: ✅ Yes, Audit Logs: ✅ Built-in",
+    "lovableDetails": "Data Isolation: ❌ Manual RLS setup, Connection Pooling: ❌ Shared resources, Audit Logs: ❌ Requires setup",
+    "winner": "apper",
+    "resultText": "Apper wins with automatic enterprise-grade setup."
+  },
+  {
+    "Id": 4,
+    "priorityKey": "monetization",
+    "feature": "Monetization Tools",
+    "apperSupport": "✅ Visual builder",
+    "lovableSupport": "⚠️ Manual config",
+    "apperDetails": "Subscription Management: ✅ Visual builder, Usage Limits & Quotas: ✅ Built-in, Coupons & Promotions: ✅ Easy setup",
+    "lovableDetails": "Subscription Management: ⚠️ Stripe + Edge functions, Usage Limits & Quotas: ❌ Code required, Coupons & Promotions: ❌ Manual Stripe config",
+    "winner": "apper",
+    "resultText": "Apper wins with full no-code billing stack."
+  },
+  {
+    "Id": 5,
+    "priorityKey": "integrations",
+    "feature": "Integrations & Analytics",
+    "apperSupport": "✅ 1,300+ integrations",
+    "lovableSupport": "⚠️ ~12 limited options",
+    "apperDetails": "Pre-built Integrations: ✅ 1,300+ (1-click), Usage Analytics: ✅ Built-in dashboard, Team Management: ✅ Native",
+    "lovableDetails": "Pre-built Integrations: ⚠️ ~12 limited options, Usage Analytics: ❌ Needs external BI tools, Team Management: ⚠️ Requires Clerk",
+    "winner": "apper",
+    "resultText": "Apper wins for plug-and-play scaling."
+  },
+  {
+    "Id": 6,
+    "priorityKey": "analytics",
+    "feature": "Real-time Analytics",
+    "apperSupport": "✅ Built-in dashboard",
+    "lovableSupport": "❌ External tools needed",
+    "apperDetails": "Usage Analytics: ✅ Built-in dashboard, Real-time Monitoring: ✅ Yes, Custom Reports: ✅ Available",
+    "lovableDetails": "Usage Analytics: ❌ Needs external BI tools, Real-time Monitoring: ❌ Manual setup, Custom Reports: ❌ Requires development",
+    "winner": "apper",
+    "resultText": "Apper provides comprehensive analytics out-of-the-box."
+  },
+  {
+    "Id": 7,
+    "priorityKey": "no-code",
+    "feature": "No-Code Experience",
+    "apperSupport": "✅ Full visual builder",
+    "lovableSupport": "⚠️ Code required",
+    "apperDetails": "Visual Builder: ✅ Complete, Drag & Drop: ✅ Yes, Code-free Setup: ✅ Fully supported",
+    "lovableDetails": "Visual Builder: ⚠️ Limited, Drag & Drop: ❌ Manual coding, Code-free Setup: ❌ Requires development",
+    "winner": "apper",
+    "resultText": "Apper delivers true no-code experience."
+  }
+]

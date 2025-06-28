@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 1,
+    "label": "I want to build my UI using AI",
+    "key": "ai-ui",
+    "description": "Generate user interfaces with artificial intelligence"
+  },
+  {
+    "Id": 2,
+    "label": "I don't want to set up backend or auth manually",
+    "key": "backend-auth",
+    "description": "Avoid complex backend and authentication setup"
+  },
+  {
+    "Id": 3,
+    "label": "I need secure, multi-tenant architecture",
+    "key": "multi-tenant",
+    "description": "Enterprise-grade security and data isolation"
+  },
+  {
+    "Id": 4,
+    "label": "I want built-in subscriptions, limits & coupons",
+    "key": "monetization",
+    "description": "Complete billing and subscription management"
+  },
+  {
+    "Id": 5,
+    "label": "I want easy integration with other services",
+    "key": "integrations",
+    "description": "Connect with external APIs and services"
+  },
+  {
+    "Id": 6,
+    "label": "I want real-time usage analytics",
+    "key": "analytics",
+    "description": "Built-in dashboards and usage tracking"
+  },
+  {
+    "Id": 7,
+    "label": "I want a no-code or visual builder experience",
+    "key": "no-code",
+    "description": "Visual interface without coding requirements"
+  }
+]
